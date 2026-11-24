@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "Old London";
+    src: url(../fonts/OldLondon.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-color: #0d1117;
+}
+h1 {
+    font-family: "Old London", Helvetica, sans-serif;
+    font-size: 120px;
+    color: white;
+}
+img{
+    filter: invert(1) drop-shadow(0 0 25px rgba(143, 179, 217, 0.6));
+    animation: flutuar 4s ease-in-out infinite;
+    opacity: 0.9;
+}
+@keyframes flutuar { 
+    0%, 100%{
+        transform: translateY(0);
+        filter: invert(1) drop-shadow(0 0 15px rgba(143,179,217,0.4));
+        opacity: 0.75;
+    }
+    50% {
+        transform: translateY(-20px);
+        filter: invert(1) drop-shadow(0 0 40px rgba(143,179,217,0.9));
+        opacity: 1;
+    } 
+}

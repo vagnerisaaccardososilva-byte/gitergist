@@ -26,7 +26,7 @@ def commitar(hoje):
 
 @app.route("/", methods = ['GET', 'POST'])
 def index():
-    hoje = date.today().strftime("%d/%m,%Y")
+    hoje = date.today().strftime("%d/%m/%Y")
     repositorio = None
     if request.method == 'POST':
         repositorio = request.form.get("repositorio","")

@@ -1,9 +1,16 @@
 from flask import Flask, render_template, request
 import pyautogui as auto
+import webview
 
 from datetime import date
+import os
+import sys
 
 
+if getattr(sys, 'frozen', False):
+    template_folder = os.path.join(sys._MEIPASS, 'teplates')
+    static_folder = os.path.join(sys._MEIPASS, 'static')
+    app = Flask(__name__,template_folder=template_folder, static_folder=static_folder)
 app = Flask(__name__)
 
 def abrir_terminal(repositorio):
@@ -37,4 +44,12 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    window = webview.create_window(
+        title="Vagner's Gitergeist v2.0",
+        url=app,
+        width=1000,
+        height=700
+    )
+
+    webview.start()
+    
